@@ -45,3 +45,6 @@ def display_records(champion_to_count, countries):
         print(name,count)
     print(f"\nThese {len(countries)} countries have won Wimbledon: ")
     print(",".join(sorted(countries)))
+
+if __name__ == '__main__':
+    main()
