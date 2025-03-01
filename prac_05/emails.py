@@ -1,6 +1,6 @@
 """
 estimated time: 20mins
-actual time:
+actual time:19mins
 """
 
 def main():
@@ -8,7 +8,7 @@ def main():
     email_to_name ={}
     email = input("Email: ")
     while email != "":
-        name = get_name_from_email(email) #TODO: write this func
+        name = get_name_from_email(email)
         confirmation = input(f"Is your name {name}? (Y/n)")
         #press Enter to accept the default of (Y)es.
         if confirmation.upper() != "Y" and confirmation != "":
@@ -20,6 +20,11 @@ def main():
         print(f"{name} {email}")
 
 def get_name_from_email(email):
+    """extract name from file"""
+    prefix = email.split('@')[0]  # get the part before '@'
+    name_part = prefix.split('.')  # split by '.'
+    name = ''.join(name_part).title() #capitalize each name part
+    return name
 
-
-
+if __name__ == '__main__':
+    main()
