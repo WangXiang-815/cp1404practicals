@@ -1,5 +1,5 @@
 #estimated time:15 mins
-
+#real time: 17mins
 word_to_count = {} #create a dict to store words and count
 text = input('Text: ') #ask input
 
