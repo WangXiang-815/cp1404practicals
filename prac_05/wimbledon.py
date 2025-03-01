@@ -10,8 +10,8 @@ INDEX_CHAMPIONS = 2
 def main():
     """read csv data and print wimbledon champions and countries details"""
     records = load_record(FILENAME)
-    champion_to_count, countries = process_record(records) #TODO:write process record func
-    display_records(champion_to_count, countries)#TODO:write display func
+    champion_to_count, countries = process_record(records)
+    display_records(champion_to_count, countries)
 
 def load_record(FILENAME):
     """load data and create a list of lists to store"""
@@ -38,3 +38,10 @@ def process_record(records):
 
     return champion_to_count, countries
 
+def display_records(champion_to_count, countries):
+    """Display func for champion and countries"""
+    print("Wimbledon champions: ")
+    for name, count in champion_to_count.items():
+        print(name,count)
+    print(f"\nThese {len(countries)} countries have won Wimbledon: ")
+    print(",".join(sorted(countries)))
