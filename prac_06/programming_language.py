@@ -15,4 +15,6 @@ class ProgrammingLanguage:
         self.reflection = reflection
         self.year = year
 
-
+    def is_dynamic(self):
+        """return the Boolean value to check if a programming language's typing is dynamic"""
+        return self.typing == "Dynamic"
