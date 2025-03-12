@@ -6,8 +6,14 @@ Actual time: 50mins
 class Guitar:
 
 
-    def __init__(self, name, year, cost):
-        "Initialize Guitar"
+    def __init__(self, name = "", year = 0, cost = 0):
+        """
+        Initialize Guitar
+        Args:
+        name (str): The name of the guitar (default is empty string).
+        year (int): The year the guitar was made (default is 0).
+        cost (float): The cost of the guitar (default is 0.0).
+        """
         self.name = name
         self.year = year
         self.cost = cost
