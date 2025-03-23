@@ -18,6 +18,18 @@ def main():
     for guitar in guitars:
         print(guitar)
 
+    #Ask user to input info about new guitar
+    print("\nInput new guitar's info: ")
+    name = input("Name: ")
+    #exit while loop when input is enter
+    while name:
+        year = int(input("Year: "))
+        cost = float(input("Cost: "))
+        guitars.append(Guitar(name, year, cost))
+        name = input("Name: ")
+
+
+
 def load_guitars(filename):
     """Load guitars info from csv file, using csv reader"""
     #create am empty list to store guitars info
