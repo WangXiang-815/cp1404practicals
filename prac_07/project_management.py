@@ -1,5 +1,4 @@
-from re import split
-
+import datetime
 from project import Project
 
 def main():
@@ -8,6 +7,48 @@ def main():
     print("Welcome to Pythonic Project Management")
     projects = load_projects(filename)
     print(f"Loaded {len(projects)} projects from projects.txt")
+
+    #Display menu
+    print("""
+    Please select an option:
+    - (L)oad projects from file
+    - (S)ave projects to file
+    - (D)isplay projects
+    - (F)ilter projects by start date
+    - (A)dd new project
+    - (U)pdate project details
+    - (Q)uit
+    """)
+    #Ask input
+    choice = input('>>> ').strip().lower()
+    while choice != 'q':
+        if choice == 'l':
+           projects = load_projects(filename)
+        elif choice == 's':
+            save_projects(filename, projects) #TODO:write save_projects
+        elif choice == 'd':
+            display_projects(projects) #TODO: write display_projects
+        elif choice == 'f':
+            filter_projects(projects) #TODO: filter_projects
+        elif choice == 'a':
+            add_projects(projects)  #TODO: add_projects
+        elif choice == 'u':
+            update_projects(projects) #TODO: update_projects
+        elif:
+            print("Invalid input, please try again")
+
+        print("""
+            Please select an option:
+            - (L)oad projects from file
+            - (S)ave projects to file
+            - (D)isplay projects
+            - (F)ilter projects by start date
+            - (A)dd new project
+            - (U)pdate project details
+            - (Q)uit
+            """)
+        choice = input('>>> ').strip().lower()
+
 
 
 def load_projects(filename):
