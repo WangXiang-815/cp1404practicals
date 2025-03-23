@@ -1,4 +1,6 @@
 import datetime
+from html.parser import incomplete
+
 from project import Project
 
 def main():
@@ -27,7 +29,7 @@ def main():
         elif choice == 's':
             save_projects(filename, projects) #TODO:write save_projects
         elif choice == 'd':
-            display_projects(projects) #TODO: write display_projects
+            display_projects(projects)
         elif choice == 'f':
             filter_projects(projects) #TODO: filter_projects
         elif choice == 'a':
@@ -49,6 +51,20 @@ def main():
             """)
         choice = input('>>> ').strip().lower()
 
+def display_projects(projects):
+    """Display projects by completion status and sorted by priority"""
+    #create two lists to group projects by completion status
+    incomplete_projects = [project for project in projects if not project.is_complete()]
+    complete_projects = [project for project in projects if project.is_complete()]
+
+    #print sorted incomplete projects
+    print("Incomplete projects: ")
+    for project in sorted(incomplete_projects):
+        print(' ', project) # ' ' to add indentation
+    #print sorted complete projects
+    print("Complete projects: ")
+    for project in sorted(complete_projects):
+        print(' ', project)
 
 
 def load_projects(filename):
