@@ -7,6 +7,16 @@ def main():
     filename = "guitars.csv"
     guitars = load_guitars(filename)
 
+    #print guitars info using for loop
+    print("These are my guitars:")
+    for guitar in guitars:
+        print(guitar)
+
+    #print sorted guitars
+    guitars.sort()
+    print("\nSorted guitars:")
+    for guitar in guitars:
+        print(guitar)
 
 def load_guitars(filename):
     """Load guitars info from csv file, using csv reader"""
@@ -20,3 +30,6 @@ def load_guitars(filename):
             guitars.append(Guitar(name, year, cost))
 
     return guitars
+
+if __name__ == '__main__':
+    main()
