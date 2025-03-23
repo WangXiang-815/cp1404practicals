@@ -28,7 +28,9 @@ def main():
         guitars.append(Guitar(name, year, cost))
         name = input("Name: ")
 
-
+    #Call save_guitars func
+    save_guitars(filename, guitars)
+    print("Guitars saved!")
 
 def load_guitars(filename):
     """Load guitars info from csv file, using csv reader"""
@@ -42,6 +44,14 @@ def load_guitars(filename):
             guitars.append(Guitar(name, year, cost))
 
     return guitars
+
+def save_guitars(filename, guitars):
+    """Save a list of guitars to CSV file"""
+    with open(filename,'w', newline='') as file:
+        writer = csv.writer(file)
+        for guitar in guitars:
+            writer.writerows([guitar.name, guitar.year, guitar.cost])
+
 
 if __name__ == '__main__':
     main()
