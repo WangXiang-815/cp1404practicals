@@ -49,8 +49,7 @@ def save_guitars(filename, guitars):
     """Save a list of guitars to CSV file"""
     with open(filename,'w', newline='') as file:
         writer = csv.writer(file)
-        for guitar in guitars:
-            writer.writerows([guitar.name, guitar.year, guitar.cost])
+        writer.writerows([[guitar.name, guitar.year, guitar.cost] for guitar in guitars])
 
 
 if __name__ == '__main__':
