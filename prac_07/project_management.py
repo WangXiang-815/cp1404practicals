@@ -31,7 +31,7 @@ def main():
         elif choice == 'd':
             display_projects(projects)
         elif choice == 'f':
-            filter_projects(projects) #TODO: filter_projects
+            filter_projects(projects)
         elif choice == 'a':
             add_projects(projects)  #TODO: add_projects
         elif choice == 'u':
@@ -65,6 +65,18 @@ def display_projects(projects):
     print("Complete projects: ")
     for project in sorted(complete_projects):
         print(' ', project)
+
+def filter_projects(projects):
+    """Filter and show projects after the date input, sorted by date"""
+    date_string = input("Show projects that start after date (dd/mm/yyyy): ")
+    try:
+        date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+        filtered = [project for project in projects if project.start_date > date]
+        for project in sorted(filtered, key=lambda x:x.start_date): #__lt__ is defined in Class Project, compared by priority
+            print(project)
+    except ValueError:
+        print("Invalid date format. Please use dd/mm/yyyy.")
+
 
 
 def load_projects(filename):
