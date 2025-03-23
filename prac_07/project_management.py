@@ -32,7 +32,7 @@ def main():
         elif choice == 'f':
             filter_projects(projects)
         elif choice == 'a':
-            add_projects(projects)  #TODO: add_projects
+            add_projects(projects)
         elif choice == 'u':
             update_projects(projects) #TODO: update_projects
         else:
@@ -49,6 +49,25 @@ def main():
             - (Q)uit
             """)
         choice = input('>>> ').strip().lower()
+
+def update_projects(projects):
+    """Update the completion percentage, priority of projects"""
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+    try:
+        choice = int(input("Project choice: "))
+        project = projects[choice]
+        print(project)
+
+        new_percentage = input("New Percentage: ")
+        new_priority = input("New Priority: ")
+
+        if new_percentage:
+            project.completion_percent = int(new_percentage)
+        if new_priority:
+            project.priority = int(new_priority)
+    except(ValueError, IndexError):
+        print("Invalid choice, please try again.")
 
 def add_projects(projects):
     """Add a new project to the list"""
