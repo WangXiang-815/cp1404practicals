@@ -26,7 +26,7 @@ def main():
         if choice == 'l':
            projects = load_projects(filename)
         elif choice == 's':
-            save_projects(filename, projects) #TODO:write save_projects
+            save_projects(filename, projects)
         elif choice == 'd':
             display_projects(projects)
         elif choice == 'f':
@@ -34,7 +34,7 @@ def main():
         elif choice == 'a':
             add_projects(projects)
         elif choice == 'u':
-            update_projects(projects) #TODO: update_projects
+            update_projects(projects)
         else:
             print("Invalid input, please try again")
 
@@ -49,6 +49,17 @@ def main():
             - (Q)uit
             """)
         choice = input('>>> ').strip().lower()
+
+        save_choice = input("Would you")
+
+def save_projects(filename, projects):
+    """Save the projects list to txt file"""
+    with open(filename,'w') as file:
+        file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")  # Write header
+        for project in projects:
+            file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t"
+                       f"{project.cost_estimate}\t{project.completion_percentage}\n")
+
 
 def update_projects(projects):
     """Update the completion percentage, priority of projects"""
