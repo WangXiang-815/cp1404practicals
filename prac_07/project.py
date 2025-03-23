@@ -1,6 +1,6 @@
 """
 EST: 1.5 hrs
-ACT:
+ACT: 2.5 hrs
 Project class
 """
 import datetime

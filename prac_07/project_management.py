@@ -50,7 +50,15 @@ def main():
             """)
         choice = input('>>> ').strip().lower()
 
-        save_choice = input("Would you")
+        save_choice = input("Would you like to save to projects.txt").lower()
+        if save_choice.startswith("y"):
+            save_projects(filename, projects)
+            print("Projects saved.")
+        else:
+            print("Projects not saved.")
+
+        print("Thank you for using custom-built in project management software.")
+
 
 def save_projects(filename, projects):
     """Save the projects list to txt file"""
