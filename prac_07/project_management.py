@@ -1,5 +1,4 @@
 import datetime
-from html.parser import incomplete
 
 from project import Project
 
@@ -36,7 +35,7 @@ def main():
             add_projects(projects)  #TODO: add_projects
         elif choice == 'u':
             update_projects(projects) #TODO: update_projects
-        elif:
+        else:
             print("Invalid input, please try again")
 
         print("""
@@ -50,6 +49,15 @@ def main():
             - (Q)uit
             """)
         choice = input('>>> ').strip().lower()
+
+def add_projects(projects):
+    """Add a new project to the list"""
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
+    priority = input("Priority: ")
+    cost_estimate = input("Cost estimate: ")
+    completion_percentage = input("Percent complete: ")
+    projects.append(Project(name, start_date, int(priority), float(cost_estimate), float(completion_percentage)))
 
 def display_projects(projects):
     """Display projects by completion status and sorted by priority"""
