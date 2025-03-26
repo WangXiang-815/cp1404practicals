@@ -19,11 +19,11 @@ BoxLayout:
             #Up button
             Button:
                 text:'Up'
-                on_press: app.handle_up()
+                on_press: app.handle_increment(input_miles.text, 1)
             #Down button
             Button:
                 text:'Down'
-                on_press: app.handle_down()
+                on_press: app.handle_increment(input_miles.text, -1)
 
     #Middle section
     Button:
