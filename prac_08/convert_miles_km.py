@@ -8,7 +8,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.core.window import Window
 
-
+#define the convertion constant
+MILES_TO_KILOS_FACTOR = 1.60934
 class ConvertMiles(App):
     """ConvertMiles is kivy app for converting miles to kilometers"""
     def build(self):
@@ -24,7 +25,7 @@ class ConvertMiles(App):
             #convert input value to float type
             miles = float(value)
             #Calculate kilometers
-            kilometers = miles * 1.60934
+            kilometers = miles * MILES_TO_KILOS_FACTOR
             #Display the kilometers in the output label
             self.root.ids.output_label.text = str(kilometers)
         except ValueError:
