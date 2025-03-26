@@ -11,6 +11,8 @@ BoxLayout:
             font_size: 48
             multiline: False
             size_hint_x: 0.85  #change size for more spaces
+            #on_text, trigger convertion when input changes
+            on_text: app.handle_convert(self.text)
 
         #up and down button
         BoxLayout:
@@ -19,11 +21,11 @@ BoxLayout:
             #Up button
             Button:
                 text:'Up'
-                on_press: app.handle_increment(input_miles.text, 1)
+                on_press: app.handle_increment(input_miles.text, 1) #increase value 1
             #Down button
             Button:
                 text:'Down'
-                on_press: app.handle_increment(input_miles.text, -1)
+                on_press: app.handle_increment(input_miles.text, -1) # decrease value -1
 
     #Middle section
     Button:
