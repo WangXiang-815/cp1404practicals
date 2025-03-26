@@ -18,6 +18,18 @@ class ConvertMiles(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
+    def handle_convert(self, value):
+        """handle a convert into kilometers, on call or Button pressed"""
+        try:
+            #convert input value to float type
+            miles = float(value)
+            #Calculate kilometers
+            kilometers = miles * 1.60934
+            #Display the kilometers in the output label
+            self.root.ids.output_label.text = str(kilometers)
+        except ValueError:
+            pass
+
 
 
 ConvertMiles().run()
