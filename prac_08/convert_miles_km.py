@@ -28,19 +28,25 @@ class ConvertMiles(App):
             #Display the kilometers in the output label
             self.root.ids.output_label.text = str(kilometers)
         except ValueError:
-            pass
+            #Handle invalid inputs
+            self.root.ids.output_label.text = '0.0'
 
     def handle_increment(self, value, increment):
         """Increase the input value by increment"""
         try:
             #get value from input
             current_value = float(value)
-            #Increase value by increment
+            # Increase value by increment
             current_value += increment
-            #return value to input
+            # return value to input
             self.root.ids.input_miles.text = str(current_value)
         except ValueError:
-            pass
+            #if input invalid, assume input is 0 and changes accordingly
+            current_value = '0.0'
+            current_value = float(current_value) + increment
+            #return value to input
+            self.root.ids.input_miles.text = str(current_value)
+
 
 
 
