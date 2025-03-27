@@ -1,6 +1,6 @@
 """
 EST:20mins
-ACT:
+ACT: 25mins
 """
 
 from kivy.app import App
