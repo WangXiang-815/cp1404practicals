@@ -1,6 +1,6 @@
 """
 EST: 1hr
-ACT:
+ACT: 1.5hrs
 python codes for converting miles to kilometers
 """
 
