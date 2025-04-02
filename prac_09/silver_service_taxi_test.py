@@ -7,9 +7,12 @@ def main():
     fancy_taxi = SilverServiceTaxi("Test taxi", 100, 2)
     fancy_taxi.drive(18)
 
-    #print output to check if works
+    #print output
     print(fancy_taxi)
     print(fancy_taxi.get_fare())
+
+    #use assert to check if correct
+    assert round(fancy_taxi.get_fare(), 2) == 48.78 , "Calculation is not correct"
 
 
 if __name__ == '__main__':
