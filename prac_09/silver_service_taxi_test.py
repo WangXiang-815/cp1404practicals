@@ -9,7 +9,8 @@ def main():
 
     #print output
     print(fancy_taxi)
-    print(fancy_taxi.get_fare())
+    # two decimal places
+    print(f"{fancy_taxi.get_fare():.2f}")
 
     #use assert to check if correct
     assert round(fancy_taxi.get_fare(), 1) == 48.80 , "Calculation is not correct"
