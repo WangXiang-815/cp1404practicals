@@ -15,5 +15,14 @@ my_taxi.drive(40)
 print(my_taxi)
 print(f"The current fare is {my_taxi.get_fare():.2f}")
 
+#restart the meter
+my_taxi.start_fare()
+#drive 100 kms
+my_taxi.drive(100)
+
+#print details and current fare
+print(my_taxi)
+print(f"The current fare is {my_taxi.get_fare():.2f}")
+
 
 
