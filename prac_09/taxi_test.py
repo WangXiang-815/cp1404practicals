@@ -1,6 +1,6 @@
 """taxi_test codes
-EST:25mins
-ACT:
+EST:25 mins
+ACT: 15 mins
 """
 #import class Taxi
 from taxi import Taxi
