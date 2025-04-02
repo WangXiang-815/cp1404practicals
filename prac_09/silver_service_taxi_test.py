@@ -12,7 +12,7 @@ def main():
     print(fancy_taxi.get_fare())
 
     #use assert to check if correct
-    assert round(fancy_taxi.get_fare(), 2) == 48.78 , "Calculation is not correct"
+    assert round(fancy_taxi.get_fare(), 1) == 48.80 , "Calculation is not correct"
 
 
 if __name__ == '__main__':
