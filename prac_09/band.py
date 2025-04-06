@@ -15,4 +15,6 @@ class Band:
         musician_str = ",".join(str(m) for m in self.musicians)
         return f"{self.name} ({musician_str})"
 
-
+    def play(self):
+        """play all musicians and return result"""
+        return "\n".join(musician.play() for musician in self.musicians)
