@@ -17,13 +17,22 @@ def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo",100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     print("Let's drive!")
     print(MENU)
-    choice = input(">>> ").lower()
-    while choice != "q":
-        if choice == "c":
+    menu_choice = input(">>> ").lower()
+    while menu_choice != "q":
+        if menu_choice == "c":
             print("Taxis available: ")
             display_taxis(taxis)
-            taxis_choice = input("Choose taxi: ")
-        elif choice == "d":
+            taxi_choice = int(input("Choose taxi: "))
+            try:
+                current_taxi = taxis[taxi_choice]
+            except IndexError:
+                print("Invalid choice")
+        elif menu_choice == "d":
+            if current_taxi:
+                current_taxi.start_fare()
+                drive_distance = float(input("Drive how far? "))
+                current_taxi.drive(drive_distance)
+
 
 def display_taxis(taxis):
     """Display taxis in specified format"""
