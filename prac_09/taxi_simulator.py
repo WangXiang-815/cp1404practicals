@@ -1,7 +1,7 @@
 """
 Taxi_simulator exercise
 EST:1.5hrs
-ACT:
+ACT: 2 hrs
 """
 
 from car import Car
