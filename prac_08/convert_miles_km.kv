@@ -1,0 +1,39 @@
+BoxLayout:
+    orientation:'vertical'
+
+    #Top section
+    BoxLayout:
+        orientation:'horizontal'
+        #TextInput
+        TextInput:
+            id: input_miles
+            text:''
+            font_size: 48
+            multiline: False
+            size_hint_x: 0.85  #change size for more spaces
+            #on_text, trigger convertion when input changes
+            on_text: app.handle_convert(self.text)
+
+        #up and down button
+        BoxLayout:
+            orientation:'vertical'
+            size_hint_x: 0.15 #changes to smaller size
+            #Up button
+            Button:
+                text:'Up'
+                on_press: app.handle_increment(input_miles.text, 1) #increase value 1
+            #Down button
+            Button:
+                text:'Down'
+                on_press: app.handle_increment(input_miles.text, -1) # decrease value -1
+
+    #Middle section
+    Button:
+        text:'Convert miles to kilometers'
+        on_press: app.handle_convert(input_miles.text)
+
+    #Bottom section
+    Label:
+        id: output_label
+        font_size: 48
+        color: (1, 1, 0, 1) # Yellow RGBA
