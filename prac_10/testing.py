@@ -51,6 +51,19 @@ def run_tests():
     car = Car("Test car")
     assert car.fuel == 0
 
+def format_sentence(phrase):
+    """Format a phrase to a sentence that starts with Cap word, ends with a single full stop
+    >>> format_sentence('hello')
+    'Hello.'
+    >>> format_sentence('It is an ex parrot.')
+    'It is an ex parrot.'
+    >>> format_sentence('good question')
+    'Good question.'
+    """
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence = f"{sentence}."
+    return sentence
 
 run_tests()
 
@@ -61,7 +74,7 @@ doctest.testmod()
 #  4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
 
-# TODO: 5. Write and test a function to format a phrase as a sentence,
+# 5. Write and test a function to format a phrase as a sentence,
 # starting with a capital and ending with a single full stop.
 # Important: start with a function header and just use pass as the body
 # then add doctests for 3 tests:
